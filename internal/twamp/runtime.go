@@ -69,7 +69,9 @@ func CopyPadding(pad []byte, n int) []byte {
 	if n > len(pad) {
 		n = len(pad)
 	}
-	return pad[:n]
+	out := make([]byte, n)
+	copy(out, pad[:n])
+	return out
 }
 
 type SessionBag struct {
